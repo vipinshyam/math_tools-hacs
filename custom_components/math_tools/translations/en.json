@@ -1,0 +1,31 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Math Tools",
+        "description": "Connect to your FastAPI math server.",
+        "data": {
+          "base_url": "Base URL (e.g. http://172.16.2.223:8111)",
+          "api_key": "API Key (optional)"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "This integration is already configured."
+    },
+    "error": {
+      "invalid_url": "Please enter a valid http(s) URL."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Math Tools options",
+        "data": {
+          "base_url": "Base URL",
+          "api_key": "API Key"
+        }
+      }
+    }
+  }
+}
