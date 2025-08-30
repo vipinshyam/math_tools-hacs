@@ -1,0 +1,11 @@
+{
+    "domain": "math_tools",
+    "name": "Math Tools",
+    "version": "1.0.0",
+    "documentation": "https://example.local/math_tools",
+    "codeowners": ["@you"],
+    "requirements": ["aiohttp>=3.9.0"],
+    "iot_class": "local_push",
+    "dependencies": ["conversation"],
+    "loggers": ["custom_components.math_tools"]
+    }

@@ -1,0 +1,200 @@
+add:
+  name: Add two numbers
+  description: Sum a and b using the external FastAPI math server (exposed to Assist tools).
+  fields:
+    a:
+      required: true
+      example: 2
+      selector: { number: { min: -1e12, max: 1e12, step: 0.000001 } }
+    b:
+      required: true
+      example: 3
+      selector: { number: { min: -1e12, max: 1e12, step: 0.000001 } }
+
+subtract:
+  name: Subtract two numbers
+  description: Compute a - b via the math server.
+  fields:
+    a:
+      required: true
+      example: 5
+      selector: { number: { min: -1e12, max: 1e12 } }
+    b:
+      required: true
+      example: 2
+      selector: { number: { min: -1e12, max: 1e12 } }
+
+multiply:
+  name: Multiply two numbers
+  description: Compute a * b via the math server.
+  fields:
+    a:
+      required: true
+      example: 6
+      selector: { number: { min: -1e9, max: 1e9 } }
+    b:
+      required: true
+      example: 7
+      selector: { number: { min: -1e9, max: 1e9 } }
+
+divide:
+  name: Divide two numbers
+  description: Compute a / b (b != 0) via the math server.
+  fields:
+    a:
+      required: true
+      example: 10
+      selector: { number: { min: -1e9, max: 1e9 } }
+    b:
+      required: true
+      example: 2
+      selector: { number: { min: -1e9, max: 1e9 } }
+
+power:
+  name: Power
+  description: Compute base raised to exponent.
+  fields:
+    base:
+      required: true
+      example: 2
+      selector: { number: { min: -1e6, max: 1e6 } }
+    exponent:
+      required: true
+      example: 8
+      selector: { number: { min: -1e3, max: 1e3 } }
+
+mean:
+  name: Mean of values
+  description: Arithmetic mean of an array of numbers.
+  fields:
+    values:
+      required: true
+      example: "1,2,3,4"
+      selector: { text: {} }
+
+median:
+  name: Median of values
+  description: Median of an array of numbers.
+  fields:
+    values:
+      required: true
+      example: "1,2,3,4,5"
+      selector: { text: {} }
+
+std:
+  name: Standard deviation
+  description: Population or sample standard deviation.
+  fields:
+    values:
+      required: true
+      example: "1,2,3,4,5"
+      selector: { text: {} }
+    sample:
+      required: false
+      example: false
+      selector: { boolean: {} }
+
+gcd:
+  name: Greatest common divisor
+  description: GCD of integers a and b.
+  fields:
+    a:
+      required: true
+      example: 48
+      selector: { number: { min: -100000, max: 100000, mode: box } }
+    b:
+      required: true
+      example: 18
+      selector: { number: { min: -100000, max: 100000, mode: box } }
+
+lcm:
+  name: Least common multiple
+  description: LCM of integers a and b.
+  fields:
+    a:
+      required: true
+      example: 12
+      selector: { number: { min: -100000, max: 100000, mode: box } }
+    b:
+      required: true
+      example: 18
+      selector: { number: { min: -100000, max: 100000, mode: box } }
+
+is_prime:
+  name: Is prime
+  description: Check whether n is a prime number.
+  fields:
+    n:
+      required: true
+      example: 97
+      selector: { number: { min: 0, max: 1000000, mode: box } }
+
+prime_factors:
+  name: Prime factors
+  description: Prime factorization of positive integer n.
+  fields:
+    n:
+      required: true
+      example: 360
+      selector: { number: { min: 1, max: 1000000000, mode: box } }
+
+fibonacci:
+  name: Fibonacci sequence
+  description: Generate the first n terms of the Fibonacci sequence.
+  fields:
+    n:
+      required: true
+      example: 25
+      selector: { number: { min: 0, max: 10000, mode: slider } }
+
+sort:
+  name: Sort values
+  description: Sort numbers ascending (set reverse=true for descending).
+  fields:
+    values:
+      required: true
+      example: "3,1,4,1,5"
+      selector: { text: {} }
+    reverse:
+      required: false
+      example: false
+      selector: { boolean: {} }
+
+moving_average:
+  name: Moving average
+  description: Simple moving average with a window size.
+  fields:
+    values:
+      required: true
+      example: "1,2,3,4,5"
+      selector: { text: {} }
+    window:
+      required: true
+      example: 3
+      selector: { number: { min: 1, max: 500, mode: slider } }
+
+rolling_min:
+  name: Rolling minimum
+  description: Rolling min over a window.
+  fields:
+    values:
+      required: true
+      example: "5,3,6,2,9"
+      selector: { text: {} }
+    window:
+      required: true
+      example: 2
+      selector: { number: { min: 1, max: 500, mode: slider } }
+
+rolling_max:
+  name: Rolling maximum
+  description: Rolling max over a window.
+  fields:
+    values:
+      required: true
+      example: "5,3,6,2,9"
+      selector: { text: {} }
+    window:
+      required: true
+      example: 2
+      selector: { number: { min: 1, max: 500, mode: slider } }
